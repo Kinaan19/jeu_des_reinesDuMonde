@@ -15,6 +15,25 @@ export class Guerrier {
     this.attaque = attaque;
     this.rage = 0;
   };
+  postures(){
+    var posture = prompt("Choisissez votre posture ! Attaque (taper 0), Défense (taper 1), normal (taper 2)")
+    if (posture == "0"){
+      this.vie = this.vie * 0.75;
+      this.attaque = this.attaque * 1.4;
+    }
+    if (posture == "1"){
+      this.vie = this.vie * 2.5;
+      this.attaque = this.attaque * 0.5;
+    }
+    if (posture == "2"){
+      this.vie = this.vie;
+      this.attaque = this.attaque;
+    }
+    else {
+      alert("Vous devez choisir 0, 1 ou 2 !")
+      postures();
+    }
+  } 
 };
 
 export class Archer {
@@ -23,6 +42,25 @@ export class Archer {
     this.vie = vie;
     this.attaque = attaque;
     this.fleche = Math.floor(Math.random() * 5) + 7;
+  }
+  postures(){
+    var posture = prompt("Choisissez votre posture ! Attaque (taper 0), Défense (taper 1), normal (taper 2)")
+    if (posture == "0"){
+      this.vie = this.vie * 0.75;
+      this.attaque = this.attaque * 1.4;
+    }
+    if (posture == "1"){
+      this.vie = this.vie * 2.5;
+      this.attaque = this.attaque * 0.5;
+    }
+    if (posture == "2"){
+      this.vie = this.vie;
+      this.attaque = this.attaque;
+    }
+    else {
+      alert("Vous devez choisir 0, 1 ou 2 !")
+      postures();
+    }
   }
 };
 
@@ -33,4 +71,24 @@ export class Mage {
     this.attaque = attaque;
     this.mana = manaTab[Math.floor(manaTab.length * Math.random())];
 }
+postures(){
+  var posture = prompt("Choisissez votre posture ! Attaque (taper 0), Défense (taper 1), normal (taper 2)")
+  if (posture == "0"){
+    this.vie = this.vie * 0.75;
+    this.attaque = this.attaque * 1.4;
+  }
+  if (posture == "1"){
+    this.vie = this.vie * 2.5;
+    this.attaque = this.attaque * 0.5;
+  }
+  if (posture == "2"){
+    this.vie = this.vie;
+    this.attaque = this.attaque;
+  }
+  else {
+    alert("Vous devez choisir 0, 1 ou 2 !")
+    postures();
+  }
+}
 };
+
