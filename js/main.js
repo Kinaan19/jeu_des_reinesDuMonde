@@ -42,15 +42,16 @@ mageVie = herosPvMax
 magePa = herosPaMax
 }
 
-//__________________________________________
 
-// function postures(){
-//   postures = prompt("Choisissez votre posture ! Attaque (taper 0), Défense (taper 1), normal (taper 2)")
-// } 
+function postures(){
+  postures = prompt("Choisissez votre posture ! Attaque (taper 0), Défense (taper 1), normal (taper 2)")
+} 
 
 var sauron = new Boss("Sauron", 3500, 50);
 var chronos = new Boss("Chronos", 4000, 80);
-var lilith = new Boss("Lilith", 8000, 100);
+var lilith = new Boss("Lilith", 8000, 30);
+
+var boss = [sauron, chronos, lilith];
 
 var herosPvMax = 3000;
 var herosPaMax = 1000;
@@ -62,9 +63,11 @@ var perso1 = new Guerrier(guerrierNom, guerrierVie, guerrierPa);
 var perso2 = new Archer(archerNom, archerVie, archerPa);
 var perso3 = new Mage(mageNom, mageVie, magePa);
 
+var heros = [perso1, perso2, perso3];
 console.log(perso1, perso2, perso3);
 
 perso1.postures();
 perso2.postures();
 perso3.postures();
-console.log(perso1)
+chronos.attaquer(heros);
+console.log(perso1, perso2, perso3);

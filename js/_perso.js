@@ -5,6 +5,9 @@ export class Boss {
     this.nom = nom;
     this.vie = vie;
     this.attaque = attaque;
+  };
+  attaquer(tabHeros){
+    tabHeros[Math.floor(Math.random()*(tabHeros.length-1))].vie -= this.attaque
   }
 };
 
@@ -15,7 +18,7 @@ export class Guerrier {
     this.attaque = attaque;
     this.rage = 0;
   }
-  attaque(){
+  attaquer(){
     Boss.vie -= this.attaque;
     if (this.rage < 4){
       this.rage ++;
@@ -52,7 +55,7 @@ export class Archer {
     this.attaque = attaque;
     this.fleche = Math.floor(Math.random() * 5) + 7;
   }
-  attaque(){
+  attaquer(){
     if (this.fleche > 1){
       Boss.vie -= this.attaque;
       this.fleche = this.fleche -1;
@@ -86,7 +89,7 @@ export class Mage {
     this.attaque = attaque;
     this.mana = manaTab[Math.floor(manaTab.length * Math.random())];
   }
-  attaque(){
+  attaquer(){
     if (this.mana > 2){
       Boss.vie -= this.attaque;
       this.mana = this.mana - 2
